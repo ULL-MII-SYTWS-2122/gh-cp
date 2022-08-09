@@ -25,6 +25,7 @@ Options:
 
 ```sh
 $ gh cp ULL-MII-SYTWS-2122/gh-cp test/test_file.txt .
+File test/test_file.txt copied succesfuly
 
 $ cat test_file.txt
 This is just a text file
