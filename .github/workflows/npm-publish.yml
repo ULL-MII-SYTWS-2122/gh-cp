@@ -1,0 +1,42 @@
+name: Publish NPM Module cp
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs: 
+  publish-npm:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macOS-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 15
+          registry-url: 'https://registry.npmjs.org'
+          scope: "@alu0100898293"
+
+      - name: "Install dependencies" 
+        run: npm ci
+
+      - name: "Install local extension"
+        run: gh extension install .
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: "Run Mocha and Chai tests"
+        run: npm test
+        env: 
+          CI: true 
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+
+  call-workflow-testing:
+    uses: ULL-MII-SYTWS-2122/gh-cp-testing/.github/workflows/testing.yml@main
