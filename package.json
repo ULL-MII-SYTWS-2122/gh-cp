@@ -1,6 +1,6 @@
 {
-  "name": "gh-cp",
-  "version": "1.0.0",
+  "name": "@alu0100898293/gh-cp",
+  "version": "1.0.1",
   "description": "gh extension to copy files",
   "main": "gh-cp.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "gh-extension"
   ],
   "author": "Nicolás Hdez Glez",
-  "license": "ISC",
+  "license": "CC-BY-NC-4.0",
   "bugs": {
     "url": "https://github.com/ULL-MII-SYTWS-2122/gh-cp/issues"
   },
@@ -22,5 +22,15 @@
   "dependencies": {
     "commander": "^9.4.0",
     "shelljs": "^0.8.5"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  },
+  "bin": {
+    "gh-cp": "gh-cp.js"
   }
 }

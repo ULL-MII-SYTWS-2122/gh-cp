@@ -2,10 +2,11 @@
 
 A GitHub CLI extension to copy a file from a GitHub repository locally without cloning the repository.
 
-## Instalation
+## Installation
 
 ```
 gh extension install  ULL-MII-SYTWS-2122/gh-cp 
+npm install @alu0100898293/gh-cp
 ```
 
 ##  Usage
