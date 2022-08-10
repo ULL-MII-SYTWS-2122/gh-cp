@@ -4,7 +4,9 @@
   "description": "gh extension to copy files",
   "main": "gh-cp.js",
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "docs:build": "documentation build gh-cp.js -f html -o docs",
+    "docs:serve": "documentation serve gh-cp.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
+    "documentation": "^13.2.5",
     "mocha": "^10.0.0"
   },
   "bin": {
