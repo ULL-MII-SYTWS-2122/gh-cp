@@ -52,8 +52,8 @@ function copy(repo, route, dest) {
     // check if dest directory exist
     dest_dir=path.dirname(dest_file)
 
-    if (!fs.existsSync(dir)){
-        fs.mkdirSync(dir, { recursive: true });
+    if (!fs.existsSync(dest_dir)){
+        fs.mkdirSync(dest_dir, { recursive: true });
     }
 
     gh(` api -H 'accept: application/vnd.github.v3.raw' "repos/${repo}/contents/${route}" > "${dest_file}" `)
