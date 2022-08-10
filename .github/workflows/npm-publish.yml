@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 15
+          node-version: 16
           registry-url: 'https://registry.npmjs.org'
           scope: "@alu0100898293"
 
@@ -26,17 +26,17 @@ jobs:
       - name: "Install local extension"
         run: gh extension install .
         env: 
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "Run Mocha and Chai tests"
         run: npm test
         env: 
           CI: true 
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_AUTH_TOKEN }}
 
   call-workflow-testing:
-    uses: ULL-MII-SYTWS-2122/gh-cp-testing/.github/workflows/testing.yml@main
+    uses: ULL-MII-SYTWS-2122/testing-gh-cp/.github/workflows/testing.yml@main
