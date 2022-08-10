@@ -1,13 +1,13 @@
 {
   "name": "@alu0100898293/gh-cp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "gh extension to copy files",
   "main": "gh-cp.js",
   "scripts": {
     "test": "mocha --reporter spec",
     "docs:build": "documentation build gh-cp.js -f html -o docs",
     "docs:serve": "documentation serve gh-cp.js",
-    "npm:publish": "npm publish --access public"
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
